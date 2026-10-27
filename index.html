@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gema – Streaming Musik Indonesia</title>
+  <meta name="description" content="Gema adalah layanan streaming musik dengan jutaan lagu, playlist pilihan, dan kualitas suara jernih.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar" id="nav">
+  <a href="#beranda" class="logo" aria-label="Gema, ke beranda">
+    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="4" fill="currentColor"/><circle cx="14" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="14" cy="14" r="13" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/></svg>
+    Gema
+  </a>
+  <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav id="menu" class="menu">
+    <a href="#putar">Putar</a>
+    <a href="#fitur">Fitur</a>
+    <a href="#harga">Harga</a>
+    <a href="#tanya">Tanya Jawab</a>
+  </nav>
+  <a href="#daftar" class="btn btn-sm head-cta">Coba gratis</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <div class="hero-text">
+      <h1>Semua lagu yang kamu cari, <span class="wave">satu aplikasi.</span></h1>
+      <p>Dengarkan lebih dari 80 juta lagu, podcast, dan playlist buatan kurator lokal. Tanpa iklan saat Premium, tetap lancar saat offline.</p>
+      <div class="cta">
+        <a href="#daftar" class="btn">Mulai mendengarkan</a>
+        <a href="#putar" class="btn btn-ghost">Coba pemutar</a>
+      </div>
+    </div>
+
+    <div class="player" id="player" aria-label="Pemutar musik">
+      <div class="cover" id="cover"></div>
+      <div class="meta">
+        <p class="now">Sedang diputar</p>
+        <h2 id="title">–</h2>
+        <p id="artist">–</p>
+      </div>
+      <div class="bars" id="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <input type="range" id="seek" min="0" max="100" value="0" aria-label="Posisi lagu">
+      <div class="times"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+      <div class="controls">
+        <button id="prev" aria-label="Lagu sebelumnya">⏮</button>
+        <button id="play" class="play" aria-label="Putar">▶</button>
+        <button id="next" aria-label="Lagu berikutnya">⏭</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section class="section" id="putar">
+    <h2>Pilih <b>suasana</b>, kami putarkan lagunya</h2>
+    <div class="tabs" id="tabs" role="tablist">
+      <button class="tab active" data-g="Semua">Semua</button>
+      <button class="tab" data-g="Pop">Pop</button>
+      <button class="tab" data-g="Jazz">Jazz</button>
+      <button class="tab" data-g="Akustik">Akustik</button>
+      <button class="tab" data-g="Elektronik">Elektronik</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- FITUR -->
+  <section class="section alt" id="fitur">
+    <h2>Dibuat agar <b>musik</b> ikut ke mana pun kamu pergi</h2>
+    <div class="features">
+      <article>
+        <h3>Unduh dan dengarkan offline</h3>
+        <p>Simpan playlist favorit saat ada Wi-Fi, lalu putar di kereta atau pesawat tanpa kuota.</p>
+      </article>
+      <article>
+        <h3>Rekomendasi harian</h3>
+        <p>Gema mempelajari lagu yang sering kamu ulang, lalu menyusun daftar putar baru setiap pagi.</p>
+      </article>
+      <article>
+        <h3>Suara jernih</h3>
+        <p>Pilih kualitas hemat data atau lossless sesuai perangkat dan koneksi yang kamu pakai.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- HARGA -->
+  <section class="section" id="harga">
+    <h2>Pilih <b>paket</b> yang sesuai</h2>
+    <label class="switch">
+      <span>Bulanan</span>
+      <input type="checkbox" id="billing" aria-label="Tagihan tahunan">
+      <i></i>
+      <span>Tahunan <b>hemat 20%</b></span>
+    </label>
+    <div class="plans">
+      <article class="plan">
+        <h3>Gratis</h3>
+        <p class="price">Rp0</p>
+        <ul><li>Putar acak</li><li>Ada iklan</li><li>Kualitas standar</li></ul>
+      </article>
+      <article class="plan hot">
+        <h3>Premium</h3>
+        <p class="price"><span id="p1" data-m="54.990" data-y="43.990">54.990</span><small>/bulan</small></p>
+        <ul><li>Tanpa iklan</li><li>Unduh offline</li><li>Kualitas lossless</li></ul>
+      </article>
+      <article class="plan">
+        <h3>Mahasiswa</h3>
+        <p class="price"><span id="p2" data-m="27.500" data-y="22.000">27.500</span><small>/bulan</small></p>
+        <ul><li>Semua fitur Premium</li><li>Verifikasi status mahasiswa</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt" id="tanya">
+    <h2>Pertanyaan yang <b>sering</b> diajukan</h2>
+    <div class="faq" id="faq">
+      <div class="qa">
+        <button class="q" aria-expanded="false">Apakah saya bisa berhenti berlangganan kapan saja?</button>
+        <div class="a"><p>Bisa. Buka pengaturan akun, pilih Batalkan langganan, dan paket tetap aktif sampai akhir periode tagihan.</p></div>
+      </div>
+      <div class="qa">
+        <button class="q" aria-expanded="false">Berapa lagu yang bisa diunduh?</button>
+        <div class="a"><p>Hingga 10.000 lagu di maksimal lima perangkat untuk setiap akun Premium.</p></div>
+      </div>
+      <div class="qa">
+        <button class="q" aria-expanded="false">Bagaimana cara mendapatkan paket Mahasiswa?</button>
+        <div class="a"><p>Daftar dengan email kampus, lalu unggah kartu tanda mahasiswa untuk diverifikasi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAFTAR -->
+  <section class="section signup" id="daftar">
+    <h2>Buat <b>akun</b> Gema</h2>
+    <form id="form" data-bs-theme="dark" class="form-card" novalidate>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="nama" class="form-label">Nama lengkap</label>
+          <input type="text" class="form-control" id="nama" name="Nama lengkap" placeholder="Contoh: Siti Aminah" minlength="3" required>
+          <div class="invalid-feedback">Nama wajib diisi, minimal 3 karakter.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="username" class="form-label">Nama pengguna</label>
+          <input type="text" class="form-control" id="username" name="Nama pengguna" placeholder="Huruf, angka, atau garis bawah" pattern="[A-Za-z0-9_]{4,}" required>
+          <div class="invalid-feedback">Gunakan minimal 4 karakter: huruf, angka, atau garis bawah.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="telp" class="form-label">Nomor ponsel</label>
+          <input type="text" class="form-control" id="telp" name="Nomor ponsel" placeholder="08xxxxxxxxxx" pattern="08[0-9]{8,11}" inputmode="numeric" required>
+          <div class="invalid-feedback">Nomor ponsel harus diawali 08 dan terdiri atas 10 sampai 13 digit.</div>
+        </div>
+        <div class="col-md-6">
+          <label for="genre" class="form-label">Genre favorit</label>
+          <select class="form-select" id="genre" name="Genre favorit" required>
+            <option value="" selected disabled>Pilih genre</option>
+            <option>Pop</option>
+            <option>Jazz</option>
+            <option>Akustik</option>
+            <option>Elektronik</option>
+          </select>
+          <div class="invalid-feedback">Pilih salah satu genre.</div>
+        </div>
+        <div class="col-12">
+          <label for="alamat" class="form-label">Alamat</label>
+          <textarea class="form-control" id="alamat" name="Alamat" rows="3" placeholder="Tulis alamat lengkap" minlength="10" required></textarea>
+          <div class="invalid-feedback">Alamat wajib diisi, minimal 10 karakter.</div>
+        </div>
+        <div class="col-12">
+          <span class="form-label d-block">Jenis kelamin</span>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Jenis kelamin" id="lk" value="Laki-laki" required>
+            <label class="form-check-label" for="lk">Laki-laki</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="Jenis kelamin" id="pr" value="Perempuan" required>
+            <label class="form-check-label" for="pr">Perempuan</label>
+            <div class="invalid-feedback">Pilih salah satu jenis kelamin.</div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn">Daftar sekarang</button>
+        </div>
+      </div>
+      <div class="hasil" id="hasil" role="status"></div>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="id">
+    <strong>Naufal Hasta Nugraha</strong>
+    <span>NIM A12.2025.07409</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
